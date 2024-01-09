@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:fragment="FooterFragment">
+<!-- Footer Section Begin -->
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><img src="/LostArk/static/img/main/up.png" style="width:35px; height: 35px; margin-bottom:10px;"></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="/LostArk/main"><img src="/LostArk/static/img/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a th:href="@{main(gubun = ${param.gubun})}"><img src="/LostArk/static/img/main/home.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px"></i>홈</a></li>
+                        <li><a th:href="@{main(gubun = ${param.gubun}, category = 1)}"><img src="/LostArk/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">군단장 레이드</a></li>
+                        <li><a th:href="@{main(gubun = ${param.gubun}, category = 2)}"><img src="/LostArk/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">어비스 던전</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                <span th:text="'Visit : ' + ${visit}" style="color:white;"></span>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+</html>

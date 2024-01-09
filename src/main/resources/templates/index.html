@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="mY2LVG-PpTAfpfluGh3Un0v7CiJG1wLgveog6iO6ke0" />
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LostArk CheatSheet</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/LostArk/static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/style.css" type="text/css">
+
+    <script src="/LostArk/static/js/includeHTML.js"></script>
+</head>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <header th:replace="header.html :: HeaderFragment"></header>
+
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+
+            <div style="margin-bottom: 40px;">
+                <button th:classappend="${#strings.toString(param.gubun)} == 1 ? 'active'" class="btn btn-dark" onClick="location.href='main?gubun=1'">덕진님 컨닝페이퍼</button>
+                <button th:classappend="${#strings.toString(param.gubun)} == 2 ? 'active'" class="btn btn-dark" onClick="location.href='main?gubun=2'">기존 컨닝페이퍼</button>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="trending__product" style="width: 1170px">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title" th:switch="${#strings.toString(param.category)}" th:value="${#strings.toString(param.category)}">
+                                    <h4 th:case="'0'">컨닝페이퍼 전체보기</h4>
+                                    <h4 th:case="'1'">군단장 레이드 컨닝페이퍼</h4>
+                                    <h4 th:case="'2'">어비스 던전 컨닝페이퍼</h4>
+                                    <h4 th:case="*">컨닝페이퍼 전체보기</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <th:block th:each="product : ${list}">
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <a th:href="@{details(gateway = ${product.gateway}, idx = ${product.idx}, gubun = ${param.gubun})}">
+                                            <div class="product__item__pic set-bg" th:data-setbg="${product.img}"></div>
+                                        </a>
+                                        <div class="product__item__text">
+                                            <ul>
+                                                <li th:each="tag : ${#strings.arraySplit(product.tag,',')}" th:text="${tag}"></li>
+                                            </ul>
+                                            <h5><a th:href="@{details(gateway = ${product.gateway}, idx = ${product.idx}, gubun = ${param.gubun})}" th:text="${product.title}"></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th:block>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+<header th:replace="footer.html :: FooterFragment"></header>
+
+
+<!-- Js Plugins -->
+<script src="/LostArk/static/js/includeHTML.js"></script>
+<script>includeHTML()</script>
+<script src="/LostArk/static/js/jquery-3.3.1.min.js"></script>
+<script src="/LostArk/static/js/bootstrap.min.js"></script>
+<script src="/LostArk/static/js/player.js"></script>
+<script src="/LostArk/static/js/jquery.nice-select.min.js"></script>
+<script src="/LostArk/static/js/mixitup.min.js"></script>
+<script src="/LostArk/static/js/jquery.slicknav.js"></script>
+<script src="/LostArk/static/js/owl.carousel.min.js"></script>
+<script src="/LostArk/static/js/main.js"></script>
+
+</body>
+
+</html>

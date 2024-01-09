@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ark.cheatsheet.mapper.VisitCountMapper">
+
+    <insert id="insertVisitCount" parameterType="com.ark.cheatsheet.vo.session.VisitCountVO">
+        INSERT INTO cheatsheet.visit (count) VALUES (#{count})
+    </insert>
+
+    <update id="updateVisitCount" parameterType="com.ark.cheatsheet.vo.session.VisitCountVO">
+        UPDATE cheatsheet.visit SET count = #{count} WHERE idx = #{idx}
+    </update>
+
+    <select id="getVisitCount" resultType="com.ark.cheatsheet.vo.session.VisitCountVO">
+        SELECT idx, count FROM cheatsheet.visit WHERE idx = 1
+    </select>
+
+</mapper>

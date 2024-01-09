@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LostArk Detail</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/LostArk/static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/style.css" type="text/css">
+
+    <link rel="stylesheet" href="/styles/vendor/jquery.fancybox.min.css">
+    <script src="/scripts/vendor/jquery.fancybox.min.js"></script>
+
+    <script src="/LostArk/static/js/includeHTML.js"></script>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <header th:replace="header.html :: HeaderFragment"></header>
+c
+    <div class="btn-gate">
+        <div id="buttonsContainer"></div>
+    </div>
+
+    <div class="source-box">
+        <span class="source-link" th:text="'출처 : '+${details.source}" style="color:white;"></span><br><br>
+        <h5 class="source-content">이미지를 클릭하시면 더 크게 보실수 있습니다. </h5>
+    </div>
+
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad" style="text-align: center;">
+
+        <block th:if="${#strings.toString(param.gubun)} == '1'">
+            <div class="container">
+                <div style="text-align: center;">
+                    <a>
+                        <img class="details-popup" th:src="${details.img}" style="width:800px;">
+                    </a>
+                </div>
+            </div>
+        </block>
+        <block th:unless="${#strings.toString(param.gubun)} == '1'">
+            <a>
+                <img class="commander-img details-popup" th:src="${details.img}" style="width:1200px;" th:if="${details.main_no} == '4' and ${details.gate} == '4' or ${details.main_no} == '5' and ${details.gate} == '4' or ${details.main_no} == '8'">
+            </a>
+
+            <div class="container">
+                <div style="text-align: center;">
+                    <a>
+                        <img class="details-popup" th:src="${details.img}" style="width:400px;" th:unless="${details.main_no} == '4' and ${details.gate} == '4' or ${details.main_no} == '5' and ${details.gate} == '4' or ${details.main_no} == '8'">
+                    </a>
+                </div>
+            </div>
+        </block>
+
+
+    </section>
+        <!-- Anime Section End -->
+
+          <!-- Search model Begin -->
+          <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form">
+                    <input type="text" id="search-input" placeholder="Search here.....">
+                </form>
+            </div>
+        </div>
+        <!-- Search model end -->
+
+    <!-- 이미지 뷰어 팝업을 위한 숨겨진 HTML 구조 -->
+    <div id="image-viewer" style="display:none;">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="full-image" />
+    </div>
+
+        <!-- Js Plugins -->
+        <script src="/LostArk/static/js/includeHTML.js"></script>
+        <script>includeHTML();</script>
+        <script src="/LostArk/static/js/jquery-3.3.1.min.js"></script>
+        <script src="/LostArk/static/js/bootstrap.min.js"></script>
+        <script src="/LostArk/static/js/player.js"></script>
+        <script src="/LostArk/static/js/jquery.nice-select.min.js"></script>
+        <script src="/LostArk/static/js/mixitup.min.js"></script>
+        <script src="/LostArk/static/js/jquery.slicknav.js"></script>
+        <script src="/LostArk/static/js/owl.carousel.min.js"></script>
+        <script src="/LostArk/static/js/main.js"></script>
+
+    </body>
+
+    </html>
