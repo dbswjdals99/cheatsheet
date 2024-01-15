@@ -50,13 +50,44 @@
         Background Set
     --------------------*/
 
+    $(document).ready(function () {
+        let video = document.getElementById('videoElement');
+        let toggleBtn = document.getElementById('PiP');
+        toggleBtn.addEventListener('click', togglePiPMode);
+        async function togglePiPMode(event) {
+            try {
+                if (video !== document.pictureInPictureElement) {
+                    await video.requestPictureInPicture();
+                    toggleBtn.textContent = "PIP 모드 종료";
+                }
+                else {
+                    await document.exitPictureInPicture();
+                    toggleBtn.textContent = "PIP 모드 시작";
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    });
+
     $(document).ready(function(){
         $('.details-popup').on('click', function(){
             var src = $(this).attr('src');
+
+            var nWidth = "1920";
+
+            var nHeight = "1080";
+
+            var xPos = (document.body.clientWidth / 2) - (nWidth / 2);
+
+            xPos += window.screenLeft;  //듀얼 모니터
+
+            var yPos = (screen.availHeight / 2) - (nHeight / 2);
+
             window.open(
                 'imgView?src=' + encodeURIComponent(src),
                 'Image View',
-                'noopener,width=1920,height=1080,resizable=yes'
+                'noopener, resizable=yes, width='+nWidth+',height='+nHeight+', left='+xPos+', top='+yPos+''
             );
         });
     });

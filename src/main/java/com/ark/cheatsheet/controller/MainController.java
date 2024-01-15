@@ -2,10 +2,9 @@ package com.ark.cheatsheet.controller;
 
 import com.ark.cheatsheet.service.MainService;
 import com.ark.cheatsheet.service.VisitCountService;
-import lombok.RequiredArgsConstructor;
+import com.ark.cheatsheet.utils.SessionListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,6 +21,9 @@ public class MainController {
     @Autowired
     private MainService mainService;
 
+    @Autowired
+    private SessionListener sessionListener;
+
     @RequestMapping("/")
     public String index(){
 
@@ -33,10 +35,17 @@ public class MainController {
             @RequestParam(value = "category", defaultValue = "0") int category,
             @RequestParam(value = "gubun", defaultValue = "0") int gubun,
             HttpSession session){
+
+        // ModelAndView 객체 선언
         ModelAndView model = new ModelAndView();
+
+        // index.html 연동
         model.setViewName("index.html");
+
+        // 메인페이지 게시물 정보 가져오기
         model.addObject("list",mainService.getMainList(category, gubun));
 
+        // 사이트 방문자 누적조회수 증가 로직
         LocalDate lastVisit = (LocalDate) session.getAttribute("lastVisit");
         LocalDate today = LocalDate.now();
 
@@ -48,6 +57,9 @@ public class MainController {
         }
 
         model.addObject("visit", visitCountService.getCount());
+
+        int activeUsers = sessionListener.getActiveSessions();
+        model.addObject("count", activeUsers);
 
         return model;
     }

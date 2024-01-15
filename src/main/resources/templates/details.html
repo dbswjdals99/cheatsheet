@@ -73,6 +73,11 @@ c
             </div>
         </block>
 
+        <video muted autoplay loop controls id="videoElement" style="display: none;">
+            <source th:src="${#strings.length(details.img) > 4 ? #strings.substring(details.img, 0, #strings.length(details.img) - 4) : details.img} + '.mp4'" type="video/mp4">
+        </video>
+        <br>
+        <button id="PiP" class="btn btn-dark">PIP 모드 시작 </button>
 
     </section>
         <!-- Anime Section End -->

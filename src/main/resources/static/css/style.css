@@ -2407,3 +2407,7 @@ ol {
 	color: white;
 	font-weight: bold;
 }
+
+.details-popup{
+	cursor:pointer;
+}
