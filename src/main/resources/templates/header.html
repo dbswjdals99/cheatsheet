@@ -3,7 +3,7 @@
       th:fragment="HeaderFragment">
 <!-- Header Section Begin -->
 <div class="header">
-    <div class="container">
+    <div class="container_header">
         <div class="row">
             <div class="col-lg-2">
                 <div class="header__logo">
@@ -22,51 +22,45 @@
 
                             <!-- 군단장 레이드 -->
                             <li th:classappend="${#strings.toString(param.category)} == '1' ? 'active'"><a th:href="@{main(gubun = ${param.gubun}, category = 1)}"><img src="/LostArk/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">군단장 레이드 <img src="/LostArk/static/img/main/down.png" style="width:10px; height: 10px;"></a>
-                                <th:block th:if="${#strings.toString(param.gubun)} == '1'">
-                                    <ul class="dropdown">
-                                        <li><a href="/LostArk/details?gubun=1&gateway=1&idx=11">발탄</a></li>
-                                        <li><a href="/LostArk/details?gubun=1&gateway=1&idx=12">비아키스</a></li>
-                                        <li><a href="/LostArk/details?gubun=1&gateway=1&idx=13">쿠크</a></li>
-                                        <li><a href="/LostArk/details?gubun=1&gateway=2&idx=14">노말 아브렐슈드</a></li>
-                                        <li><a href="/LostArk/details?gubun=1&gateway=2&idx=15">하드 아브렐슈드</a></li>
-                                        <li><a href="/LostArk/details?gubun=1&gateway=1&idx=16">노말 일리아칸</a></li>
-                                        <li><a href="/LostArk/details?gubun=1&gateway=1&idx=17">하드 일리아칸</a></li>
-                                        <li><a href="/LostArk/details?gubun=1&gateway=2&idx=18">카멘</a></li>
-                                    </ul>
-                                </th:block>
-                                <th:block th:unless="${#strings.toString(param.gubun)} == '1'">
-                                    <ul class="dropdown">
-                                        <li><a href="/LostArk/details?gubun=2&gateway=1&idx=1">발탄</a></li>
-                                        <li><a href="/LostArk/details?gubun=2&gateway=1&idx=2">비아키스</a></li>
-                                        <li><a href="/LostArk/details?gubun=2&gateway=1&idx=3">쿠크</a></li>
-                                        <li><a href="/LostArk/details?gubun=2&gateway=2&idx=4">노말 아브렐슈드</a></li>
-                                        <li><a href="/LostArk/details?gubun=2&gateway=2&idx=5">하드 아브렐슈드</a></li>
-                                        <li><a href="/LostArk/details?gubun=2&gateway=1&idx=6">노말 일리아칸</a></li>
-                                        <li><a href="/LostArk/details?gubun=2&gateway=1&idx=7">하드 일리아칸</a></li>
-                                        <li><a href="/LostArk/details?gubun=2&gateway=2&idx=8">카멘</a></li>
-                                    </ul>
-                                </th:block>
-
+                                <ul class="dropdown">
+                                    <li><a href="/LostArk/details?gubun=1&gateway=1&idx=1">발탄</a></li>
+                                    <li><a href="/LostArk/details?gubun=1&gateway=1&idx=2">비아키스</a></li>
+                                    <li><a href="/LostArk/details?gubun=1&gateway=1&idx=3">쿠크</a></li>
+                                    <li><a href="/LostArk/details?gubun=1&gateway=2&idx=4">아브렐슈드(노말)</a></li>
+                                    <li><a href="/LostArk/details?gubun=1&gateway=2&idx=5">아브렐슈드(하드)</a></li>
+                                    <li><a href="/LostArk/details?gubun=1&gateway=1&idx=6">일리아칸</a></li>
+                                    <li><a href="/LostArk/details?gubun=1&gateway=2&idx=7">카멘</a></li>
+                                </ul>
                             </li>
 
                             <!-- 어비스 던전 -->
                             <li th:classappend="${#strings.toString(param.category)} == '2' ? 'active'"><a th:href="@{main(gubun = ${param.gubun}, category = 2)}"><img src="/LostArk/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">어비스 던전 <img src="/LostArk/static/img/main/down.png" style="width:10px; height: 10px;"></a>
-                                <th:block th:if="${#strings.toString(param.gubun)} == '1'">
-                                    <ul class="dropdown">
-                                        <li><a href="/LostArk/details?gubun=1&gateway=1&idx=19">카양겔</a></li>
-                                        <li><a href="/LostArk/details?gubun=1&gateway=3&idx=20">혼돈의 상아탑</a></li>
-                                    </ul>
-                                </th:block>
-                                <th:block th:unless="${#strings.toString(param.gubun)} == '1'">
-                                    <ul class="dropdown">
-                                        <li><a href="/LostArk/details?gubun=2&gateway=1&idx=9">카양겔</a></li>
-                                        <li><a href="/LostArk/details?gubun=2&gateway=3&idx=10">혼돈의 상아탑</a></li>
-                                    </ul>
-                                </th:block>
+                                <ul class="dropdown">
+                                    <li><a href="/LostArk/details?gubun=1&gateway=1&idx=9">카양겔</a></li>
+                                    <li><a href="/LostArk/details?gubun=1&gateway=3&idx=10">혼돈의 상아탑</a></li>
+                                </ul>
                             </li>
+
+                            <!-- 카제로스 레이드 -->
+                            <li th:classappend="${#strings.toString(param.category)} == '3' ? 'active'"><a th:href="@{main(gubun = ${param.gubun}, category = 3)}"><img src="/LostArk/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">카제로스 레이드 <img src="/LostArk/static/img/main/down.png" style="width:10px; height: 10px;"></a>
+                                <ul class="dropdown">
+                                    <li><a href="/LostArk/details?gubun=1&gateway=2&idx=8">에키드나</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- 로스트아크 도구모음 -->
+                            <li th:classappend="${#strings.toString(param.category)} == '4' ? 'active'"><a><img src="/LostArk/static/img/main/tools.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">로아 도구 <img src="/LostArk/static/img/main/down.png" style="width:10px; height: 10px;"></a>
+                                <ul class="dropdown">
+                                    <li><a href="/LostArk/calculator?gubun=1&category=4">경매 계산기</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
                     </nav>
                 </div>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <span style="color: white; font-weight: bold; font-size: medium;">Made By.취딧</span>
             </div>
         </div>
         <div id="mobile-menu-wrap"></div>

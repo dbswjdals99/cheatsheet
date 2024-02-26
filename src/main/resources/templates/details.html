@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/LostArk/static/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/LostArk/static/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/LostArk/static/css/style.css" type="text/css">
+    <link rel="icon" href="/LostArk/static/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/styles/vendor/jquery.fancybox.min.css">
     <script src="/scripts/vendor/jquery.fancybox.min.js"></script>
@@ -55,19 +56,6 @@ c
                 <div style="text-align: center;">
                     <a>
                         <img class="details-popup" th:src="${details.img}" style="width:800px;">
-                    </a>
-                </div>
-            </div>
-        </block>
-        <block th:unless="${#strings.toString(param.gubun)} == '1'">
-            <a>
-                <img class="commander-img details-popup" th:src="${details.img}" style="width:1200px;" th:if="${details.main_no} == '4' and ${details.gate} == '4' or ${details.main_no} == '5' and ${details.gate} == '4' or ${details.main_no} == '8'">
-            </a>
-
-            <div class="container">
-                <div style="text-align: center;">
-                    <a>
-                        <img class="details-popup" th:src="${details.img}" style="width:400px;" th:unless="${details.main_no} == '4' and ${details.gate} == '4' or ${details.main_no} == '5' and ${details.gate} == '4' or ${details.main_no} == '8'">
                     </a>
                 </div>
             </div>

@@ -4,16 +4,16 @@
 <mapper namespace="com.ark.cheatsheet.mapper.MainMapper">
 
     <select id="getMainList" parameterType="int" resultType="com.ark.cheatsheet.vo.main.MainVO">
-        select * from cheatsheet.main_test
+        select * from cheatsheet.main
             WHERE gubun = #{gubun}
             <if test='category != 0'>
                 AND category = #{category}
             </if>
-        order by idx;
+        order by seq;
     </select>
 
     <select id="getDetailsContent" resultType="com.ark.cheatsheet.vo.main.CheatSheetVO">
-        select * from cheatsheet.cheatsheet_test where main_no = #{idx} and gate = #{gate} and delete_it = 0;
+        select * from cheatsheet.cheatsheet where main_no = #{idx} and gate = #{gate} and delete_it = 0;
     </select>
 
 </mapper>

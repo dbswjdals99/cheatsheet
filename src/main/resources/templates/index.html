@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+    <link rel="icon" href="/LostArk/static/favicon.ico" type="image/x-icon">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="/LostArk/static/css/bootstrap.min.css" type="text/css">
@@ -30,9 +31,9 @@
 </head>
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+<!--    <div id="preloder">-->
+<!--        <div class="loader"></div>-->
+<!--    </div>-->
 
     <header th:replace="header.html :: HeaderFragment"></header>
 
@@ -43,18 +44,18 @@
 
             <div style="margin-bottom: 40px;">
                 <button th:classappend="${#strings.toString(param.gubun)} == 1 ? 'active'" class="btn btn-dark" onClick="location.href='main?gubun=1'">2024(NEW) 컨닝페이퍼</button>
-                <button th:classappend="${#strings.toString(param.gubun)} == 2 ? 'active'" class="btn btn-dark" onClick="location.href='main?gubun=2'">기존 컨닝페이퍼</button>
             </div>
 
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="trending__product" style="width: 1170px">
+                <div class="col-lg-8" style="flex:0 0 100%; max-width: 100%;">
+                    <div class="trending__product">
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <div class="section-title" th:switch="${#strings.toString(param.category)}" th:value="${#strings.toString(param.category)}">
                                     <h4 th:case="'0'">컨닝페이퍼 전체보기</h4>
                                     <h4 th:case="'1'">군단장 레이드 컨닝페이퍼</h4>
                                     <h4 th:case="'2'">어비스 던전 컨닝페이퍼</h4>
+                                    <h4 th:case="'3'">카제로스 레이드 컨닝페이퍼</h4>
                                     <h4 th:case="*">컨닝페이퍼 전체보기</h4>
                                 </div>
                             </div>

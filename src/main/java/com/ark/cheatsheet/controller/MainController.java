@@ -80,4 +80,12 @@ public class MainController {
         return model;
     }
 
+    @RequestMapping(value = "calculator")
+    public ModelAndView calculator(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("calculator.html");
+
+        return model;
+    }
+
 }

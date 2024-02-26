@@ -14,6 +14,7 @@
     /*------------------
         Preloader
     --------------------*/
+
     $(window).on('load', function () {
         $(".loader").fadeOut();
         $("#preloder").delay(200).fadeOut("slow");
@@ -42,7 +43,6 @@
                 value: num
             }).appendTo($buttonsContainer);
         }
-
 
     });
 
@@ -184,5 +184,117 @@
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
      });
+
+    /*------------------
+        input::focus
+    --------------------*/
+    $(".cal-input-div").click(function(){
+        $(".cal-input").focus();
+    });
+
+    $(".cal-input").on("focusin", function(){
+        $(".cal-input-div").css({
+            "border":"1px solid green",
+            "box-shadow":"0 0 0 2px green",
+            "transition": "all 0.3s"
+        });
+    });
+    $(".cal-input").on("focusout", function(){
+        $(".cal-input-div").css({
+            "box-shadow":"none",
+            "border":"1px solid white",
+        });
+    });
+
+    /*------------------
+          쌀먹 계산기 계산
+    --------------------*/
+
+    $(document).ready(function () {
+
+        $(".table-clipboard").click(function(){
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'bottom',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            });
+
+            const textArea = document.createElement('textarea');
+            textArea.value = $(this).children("input[type=hidden]").val();
+            document.body.appendChild(textArea);
+            textArea.select();
+            textArea.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('복사 실패', err);
+            }
+            textArea.setSelectionRange(0, 0);
+            document.body.removeChild(textArea);
+            Toast.fire({
+                icon: 'success',
+                title: '복사가 완료되었습니다.'
+            })
+
+        });
+
+        $(".cal-button").click(function(){
+            $(".cal-button").removeClass("active");
+            $("#cal-num").val($(this).val());
+            $(this).addClass("active");
+
+            const num = $(this).val();
+            const realprice = $("#input").val();
+
+            const resultprice = Mathprice(num, realprice);
+            const result2price = resultprice / 1.1;
+
+            $("#a1-gold").text(Math.floor(resultprice)+" G");
+            $("#b1-gold").text(Math.floor(result2price)+" G");
+            $("#a2-gold").text(Math.floor(realprice-resultprice)+" G");
+            $("#b2-gold").text(Math.floor(realprice-result2price)+" G");
+            $("#a3-gold").text(Math.floor(resultprice / (num-1))+" G");
+            $("#b3-gold").text(Math.floor(result2price / (num-1))+" G");
+
+            $("#cal-clipboard1").val(Math.floor(resultprice));
+            $("#cal-clipboard2").val(Math.floor(result2price));
+
+        });
+
+        const input = document.getElementById("input");
+        input.addEventListener("input", function(e) {
+            const num = $("#cal-num").val();
+            const realprice = $(this).val();
+
+            const resultprice = Mathprice(num, realprice);
+            const result2price = resultprice / 1.1;
+
+            $("#a1-gold").text(Math.floor(resultprice)+" G");
+            $("#b1-gold").text(Math.floor(result2price)+" G");
+            $("#a2-gold").text(Math.floor(realprice-resultprice)+" G");
+            $("#b2-gold").text(Math.floor(realprice-result2price)+" G");
+            $("#a3-gold").text(Math.floor(resultprice / (num-1))+" G");
+            $("#b3-gold").text(Math.floor(result2price / (num-1))+" G");
+
+            $("#cal-clipboard1").val(Math.floor(resultprice));
+            $("#cal-clipboard2").val(Math.floor(result2price));
+
+        });
+    });
+
+    function Mathprice(num, realprice){
+        const price = realprice * 0.95;
+        const calprice = price / num;
+        const resultprice = price - calprice;
+
+        return resultprice;
+    }
 
 })(jQuery);

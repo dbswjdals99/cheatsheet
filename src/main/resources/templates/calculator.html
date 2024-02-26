@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="mY2LVG-PpTAfpfluGh3Un0v7CiJG1wLgveog6iO6ke0" />
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LostArk CheatSheet</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <link rel="icon" href="/LostArk/static/favicon.ico" type="image/x-icon">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/LostArk/static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/LostArk/static/css/style.css" type="text/css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="/LostArk/static/js/includeHTML.js"></script>
+</head>
+<body>
+    <header th:replace="header.html :: HeaderFragment"></header>
+
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div style="text-align: center;">
+                <div class="cal-input-div">
+                    <div style="text-align: left">
+                        <input type="text" id="input" class="form-control-lg cal-input" placeholder="경매 가격을 입력해주세요.">
+                        <span style="color:white;">G </span>
+                        <img src="/LostArk/static/img/main/gold.png"><br>
+                    </div>
+                </div>
+
+                <div class="cal-button-div">
+                    <button type="button" class="btn btn-dark cal-button" value="4">4인</button>
+                    <button type="button" class="btn btn-dark cal-button active" value="8">8인</button>
+                    <button type="button" class="btn btn-dark cal-button" value="16">16인</button>
+                    <button type="button" class="btn btn-dark cal-button" value="30">필드보스</button>
+                    <input type="hidden" value="8" id="cal-num">
+                </div>
+
+                <table class="table table-dark table-config" align="center">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">입찰가</th>
+                            <th scope="col">판매이익</th>
+                            <th scope="col">분배금</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-clipboard">
+                            <input type="hidden" value="0" id="cal-clipboard1">
+                            <td scope="row">적정 입찰가격</td>
+                            <td id="a1-gold">0 G</td>
+                            <td id="a2-gold" style="color: #86cfda;">0 G</td>
+                            <td id="a3-gold" style="color: #86cfda;">0 G</td>
+                        </tr>
+                        <tr class="table-clipboard">
+                            <input type="hidden" value="0" id="cal-clipboard2">
+                            <td scope="row">선빵 입찰가격</td>
+                            <td id="b1-gold">0 G</td>
+                            <td id="b2-gold" style="color: #86cfda;">0 G</td>
+                            <td id="b3-gold" style="color: #86cfda;">0 G</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <div align="center" style="color: white;">라인을 클릭하시면 숫자가 복사됩니다.</div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Js Plugins -->
+<script src="/LostArk/static/js/includeHTML.js"></script>
+<script>includeHTML()</script>
+<script src="/LostArk/static/js/jquery-3.3.1.min.js"></script>
+<script src="/LostArk/static/js/bootstrap.min.js"></script>
+<script src="/LostArk/static/js/player.js"></script>
+<script src="/LostArk/static/js/jquery.nice-select.min.js"></script>
+<script src="/LostArk/static/js/mixitup.min.js"></script>
+<script src="/LostArk/static/js/jquery.slicknav.js"></script>
+<script src="/LostArk/static/js/owl.carousel.min.js"></script>
+<script src="/LostArk/static/js/main.js"></script>
+
+</body>
+
+</html>
