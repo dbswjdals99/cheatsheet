@@ -73,7 +73,7 @@ public class WebConfig implements WebApplicationInitializer {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
 
-        source.registerCorsConfiguration("/LostArk/**", corsConfiguration);
+        source.registerCorsConfiguration("/**", corsConfiguration);
 
         CorsFilter filter = new CorsFilter(source);
 

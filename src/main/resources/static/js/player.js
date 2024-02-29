@@ -900,7 +900,7 @@ typeof navigator === "object" && (function (global, factory) {
       if (browser.isIPhone) {
         return false;
       } // Safari
-      // https://developer.apple.com/documentation/webkit/LostArk/static/js/adding_picture_in_picture_to_your_safari_media_controls
+      // https://developer.apple.com/documentation/webkit/static/js/adding_picture_in_picture_to_your_safari_media_controls
 
 
       if (is$1.function(createElement('video').webkitSetPresentationMode)) {
@@ -2331,9 +2331,9 @@ typeof navigator === "object" && (function (global, factory) {
       if (!this.supported.ui || !this.config.invertTime && this.currentTime) {
         return;
       } // If duration is the 2**32 (shaka), Infinity (HLS), DASH-IF (Number.MAX_SAFE_INTEGER || Number.MAX_VALUE) indicating live we hide the currentTime and progressbar.
-      // https://github.com/video-dev/hls./LostArk/static/js/blob/5820d29d3c4c8a46e8b75f1e3afa3e68c1a9a2db/src/controller/buffer-controller.js#L415
+      // https://github.com/video-dev/hls./static/js/blob/5820d29d3c4c8a46e8b75f1e3afa3e68c1a9a2db/src/controller/buffer-controller.js#L415
       // https://github.com/google/shaka-player/blob/4d889054631f4e1cf0fbd80ddd2b71887c02e232/lib/media/streaming_engine.js#L1062
-      // https://github.com/Dash-Industry-Forum/dash./LostArk/static/js/blob/69859f51b969645b234666800d4cb596d89c602d/src/dash/models/DashManifestModel.js#L338
+      // https://github.com/Dash-Industry-Forum/dash./static/js/blob/69859f51b969645b234666800d4cb596d89c602d/src/dash/models/DashManifestModel.js#L338
 
 
       if (this.duration >= Math.pow(2, 32)) {
@@ -3779,7 +3779,7 @@ typeof navigator === "object" && (function (global, factory) {
         api: 'https://noembed.com/embed?url=https://www.youtube.com/watch?v={0}'
       },
       googleIMA: {
-        sdk: 'https://imasdk.googleapis.com//LostArk/static/js/sdkloader/ima3.js'
+        sdk: 'https://imasdk.googleapis.com//static/js/sdkloader/ima3.js'
       }
     },
     // Custom control listeners
@@ -8935,7 +8935,7 @@ typeof navigator === "object" && (function (global, factory) {
         }
 
         if (this.isVimeo) {
-          // https://github.com/vimeo/player./LostArk/static/js/#setplaybackrateplaybackrate-number-promisenumber-rangeerrorerror
+          // https://github.com/vimeo/player./static/js/#setplaybackrateplaybackrate-number-promisenumber-rangeerrorerror
           return 0.5;
         } // https://stackoverflow.com/a/32320020/1191319
 
@@ -8955,7 +8955,7 @@ typeof navigator === "object" && (function (global, factory) {
         }
 
         if (this.isVimeo) {
-          // https://github.com/vimeo/player./LostArk/static/js/#setplaybackrateplaybackrate-number-promisenumber-rangeerrorerror
+          // https://github.com/vimeo/player./static/js/#setplaybackrateplaybackrate-number-promisenumber-rangeerrorerror
           return 2;
         } // https://stackoverflow.com/a/32320020/1191319
 
