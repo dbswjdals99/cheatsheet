@@ -16,8 +16,8 @@ public class MainServiceImpl implements MainService {
     @Autowired
     private final MainMapper mapper;
 
-    public ArrayList<MainVO> getMainList(int category, int gubun){
-        return mapper.getMainList(category, gubun);
+    public ArrayList<MainVO> getMainList(int category, String order){
+        return mapper.getMainList(category, order);
     }
 
     @Override

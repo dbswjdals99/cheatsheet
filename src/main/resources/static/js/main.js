@@ -109,8 +109,7 @@
         const idx = urlParams.get('idx');
         const gateway = urlParams.get('gateway');
         const gate = $(this).val();
-        const gubun = urlParams.get('gubun');
-        location.href = "/details?idx=" + idx + "&gate=" + gate + "&gateway=" + gateway + "&gubun=" + gubun;
+        location.href = "/details?idx=" + idx + "&gate=" + gate + "&gateway=" + gateway;
     });
 
     // Search model
@@ -288,6 +287,7 @@
 
         });
     });
+
 
     function Mathprice(num, realprice){
         const price = realprice * 0.95;

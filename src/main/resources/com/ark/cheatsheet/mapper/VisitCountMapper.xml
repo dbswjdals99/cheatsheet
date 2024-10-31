@@ -3,6 +3,7 @@
 
 <mapper namespace="com.ark.cheatsheet.mapper.VisitCountMapper">
 
+    <!--메인페이지 방문자 수-->
     <insert id="insertVisitCount" parameterType="com.ark.cheatsheet.vo.session.VisitCountVO">
         INSERT INTO cheatsheet.visit (count) VALUES (#{count})
     </insert>
@@ -14,5 +15,16 @@
     <select id="getVisitCount" resultType="com.ark.cheatsheet.vo.session.VisitCountVO">
         SELECT idx, count FROM cheatsheet.visit WHERE idx = 1
     </select>
+
+
+    <!--상세페이지 조회수-->
+    <select id="getViewCount" parameterType="String" resultType="com.ark.cheatsheet.vo.session.ViewCountVO">
+        SELECT * FROM cheatsheet.main
+        where idx = ${idx};
+    </select>
+
+    <update id="updateViewCount" parameterType="com.ark.cheatsheet.vo.session.VisitCountVO">
+        UPDATE cheatsheet.main SET view = #{view} WHERE idx = #{idx}
+    </update>
 
 </mapper>

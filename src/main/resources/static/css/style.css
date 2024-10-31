@@ -2474,4 +2474,13 @@ ol {
 	cursor: pointer;
 }
 
+#main-view{
+    color:white;
+    bold:bolder;
+}
+
+#main-view-div{
+    display:inline;
+}
+
 

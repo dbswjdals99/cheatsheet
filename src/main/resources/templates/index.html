@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="mY2LVG-PpTAfpfluGh3Un0v7CiJG1wLgveog6iO6ke0" />
@@ -9,6 +8,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>LostArk CheatSheet</title>
 
     <!-- Google Font -->
@@ -43,7 +43,9 @@
         <div class="container">
 
             <div style="margin-bottom: 40px;">
-                <button th:classappend="${#strings.toString(param.gubun)} == 1 ? 'active'" class="btn btn-dark" onClick="location.href='main?gubun=1'">2024(NEW) 컨닝페이퍼</button>
+                <a th:href="@{main(order = DESC, category = ${param.category})}" th:classappend="${#strings.toString(param.order)} == 'DESC' ? 'active'" class="btn btn-dark" >최신순</a>
+                <a th:href="@{main(order = ASC, category = ${param.category})}" th:classappend="${#strings.toString(param.order)} == 'ASC' ? 'active'" class="btn btn-dark">기본순</a>
+                <a th:href="@{main(order = VIEW, category = ${param.category})}" th:classappend="${#strings.toString(param.order)} == 'VIEW' ? 'active'" class="btn btn-dark">조회순</a>
             </div>
 
             <div class="row">
@@ -56,6 +58,7 @@
                                     <h4 th:case="'1'">군단장 레이드 컨닝페이퍼</h4>
                                     <h4 th:case="'2'">어비스 던전 컨닝페이퍼</h4>
                                     <h4 th:case="'3'">카제로스 레이드 컨닝페이퍼</h4>
+                                    <h4 th:case="'4'">에픽 레이드 컨닝페이퍼</h4>
                                     <h4 th:case="*">컨닝페이퍼 전체보기</h4>
                                 </div>
                             </div>
@@ -65,14 +68,14 @@
                             <th:block th:each="product : ${list}">
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <a th:href="@{details(gateway = ${product.gateway}, idx = ${product.idx}, gubun = ${param.gubun})}">
+                                        <a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}">
                                             <div class="product__item__pic set-bg" th:data-setbg="${product.img}"></div>
                                         </a>
                                         <div class="product__item__text">
                                             <ul>
                                                 <li th:each="tag : ${#strings.arraySplit(product.tag,',')}" th:text="${tag}"></li>
                                             </ul>
-                                            <h5><a th:href="@{details(gateway = ${product.gateway}, idx = ${product.idx}, gubun = ${param.gubun})}" th:text="${product.title}"></a></h5>
+                                            <h5><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a><div id="main-view-div" style="display:inline; color:white; float:right;"><span th:text="${product.view}" id="main-view"></span><img src="/static/img/main/eyes.png" style="width: 25px; height: 25px; margin-left: 5px; margin-right: 5px; margin-bottom: 3px"></div></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -105,7 +108,6 @@
     <!-- Search model end -->
 
 <header th:replace="footer.html :: FooterFragment"></header>
-
 
 <!-- Js Plugins -->
 <script src="/static/js/includeHTML.js"></script>

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface MainService {
 
-    public List<MainVO> getMainList(int category, int gubun);
+    public List<MainVO> getMainList(int category, String order);
 
     public CheatSheetVO getDetailsContent(String idx, String gate);
 

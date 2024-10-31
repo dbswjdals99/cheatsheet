@@ -7,6 +7,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>LostArk Detail</title>
 
     <!-- Google Font -->
@@ -51,7 +52,6 @@ c
     <!-- Anime Section Begin -->
     <section class="anime-details spad" style="text-align: center;">
 
-        <block th:if="${#strings.toString(param.gubun)} == '1'">
             <div class="container">
                 <div style="text-align: center;">
                     <a>
@@ -59,7 +59,6 @@ c
                     </a>
                 </div>
             </div>
-        </block>
 
         <video muted autoplay loop controls id="videoElement" style="display: none;">
             <source th:src="${#strings.length(details.img) > 4 ? #strings.substring(details.img, 0, #strings.length(details.img) - 4) : details.img} + '.mp4'" type="video/mp4">

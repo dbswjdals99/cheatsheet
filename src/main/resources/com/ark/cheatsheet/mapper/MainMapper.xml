@@ -3,17 +3,26 @@
 
 <mapper namespace="com.ark.cheatsheet.mapper.MainMapper">
 
-    <select id="getMainList" parameterType="int" resultType="com.ark.cheatsheet.vo.main.MainVO">
-        select * from cheatsheet.main_test
-            WHERE gubun = #{gubun}
-            <if test='category != 0'>
-                AND category = #{category}
+    <select id="getMainList" parameterType="String" resultType="com.ark.cheatsheet.vo.main.MainVO">
+        select * from cheatsheet.main
+            <if test="category != 0">
+                WHERE category = #{category}
             </if>
-        order by seq;
+            <choose>
+                <when test="order.equals('VIEW')">
+                    order by view desc;
+                </when>
+                <when test="order.equals('ASC')">
+                    order by seq asc;
+                </when>
+                <otherwise>
+                    order by seq desc;
+                </otherwise>
+            </choose>
     </select>
 
     <select id="getDetailsContent" resultType="com.ark.cheatsheet.vo.main.CheatSheetVO">
-        select * from cheatsheet.cheatsheet_test where main_no = #{idx} and gate = #{gate} and delete_it = 0;
+        select * from cheatsheet.cheatsheet where main_no = #{idx} and gate = #{gate} and delete_it = 0;
     </select>
 
 </mapper>

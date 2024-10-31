@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public interface MainMapper {
 
-    public ArrayList<MainVO> getMainList(@Param("category") int category, @Param("gubun") int gubun);
+    public ArrayList<MainVO> getMainList(@Param("category") int category, @Param("order") String order);
 
     public CheatSheetVO getDetailsContent(String idx, String gate);
 

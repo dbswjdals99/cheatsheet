@@ -15,4 +15,6 @@ public class CheatSheetVO {
 
     private String source;
 
+    private String category;
+
 }

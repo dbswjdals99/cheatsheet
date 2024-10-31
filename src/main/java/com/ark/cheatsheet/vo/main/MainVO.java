@@ -15,4 +15,8 @@ public class MainVO {
 
     private String gateway;
 
+    private String category;
+
+    private String view;
+
 }

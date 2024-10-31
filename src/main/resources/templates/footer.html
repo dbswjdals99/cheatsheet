@@ -10,23 +10,24 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a th:href="@{main(gubun = ${param.gubun})}"><img style="max-width: 60%; margin-left: 50px;" src="/static/img/logo.png" alt=""></a>
+                    <a href="../main"><img style="max-width: 60%; margin-left: 50px;" src="/static/img/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <li><a th:href="@{main(gubun = ${param.gubun})}"><img src="/static/img/main/home.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px"></i>홈</a></li>
-                        <li><a th:href="@{main(gubun = ${param.gubun}, category = 1)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">군단장 레이드</a></li>
-                        <li><a th:href="@{main(gubun = ${param.gubun}, category = 2)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">어비스 던전</a></li>
-                        <li><a th:href="@{main(gubun = ${param.gubun}, category = 3)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">카제로스 레이드</a></li>
-                        <li><a th:href="@{calculator(gubun = ${param.gubun}, category = 4)}"><img src="/static/img/main/tools.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">로아 도구</a></li>
+                        <li><a th:href="@{main(order = ${param.order}, category = 0)}"><img src="/static/img/main/home.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px"></i>홈</a></li>
+                        <li><a th:href="@{main(category = 1)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">군단장 레이드</a></li>
+                        <li><a th:href="@{main(category = 2)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">어비스 던전</a></li>
+                        <li><a th:href="@{main(category = 3)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">카제로스 레이드</a></li>
+                        <li><a th:href="@{main(category = 4)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">에픽 레이드</a></li>
+                        <li><a th:href="@{calculator(category = 5)}"><img src="/static/img/main/tools.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">로아 도구</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3">
                 <p style="color: white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <span th:text="'Visit : ' + ${visit}" style="color:white;"></span><br>
+                    <span th:text="'방문자 : ' + ${visit}" style="color:white;"></span><br>
                     <span th:text="'현재 사용자 : ' + ${count}" style="color:white;"></span><br>
                 </p>
             </div>
