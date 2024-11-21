@@ -48,6 +48,16 @@
                 <a th:href="@{main(order = VIEW, category = ${param.category})}" th:classappend="${#strings.toString(param.order)} == 'VIEW' ? 'active'" class="btn btn-dark">조회순</a>
             </div>
 
+            <!-- Search model Begin -->
+            <!--<div class="search-model">
+                <div class="h-100 d-flex align-items-center justify-content-center">
+                    <div class="search-close-switch"><i class="icon_close"></i></div>
+                    <form class="search-model-form">
+                    </form>
+                </div>
+            </div>-->
+            <!-- Search model end -->
+
             <div class="row">
                 <div class="col-lg-8" style="flex:0 0 100%; max-width: 100%;">
                     <div class="trending__product">
@@ -96,16 +106,6 @@
 </div>
 </section>
 <!-- Product Section End -->
-
-    <!-- Search model Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch"><i class="icon_close"></i></div>
-            <form class="search-model-form">
-            </form>
-        </div>
-    </div>
-    <!-- Search model end -->
 
 <header th:replace="footer.html :: FooterFragment"></header>
 

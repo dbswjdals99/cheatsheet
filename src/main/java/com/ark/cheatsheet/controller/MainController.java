@@ -49,6 +49,9 @@ public class MainController {
         // 메인페이지 게시물 정보 가져오기
         model.addObject("list",mainService.getMainList(category, order));
 
+        // 헤더 게시물 정보 가져오기
+        model.addObject("headerList",mainService.getHeaderList());
+
         // 사이트 방문자 누적조회수 증가 로직
         LocalDate lastVisit = (LocalDate) session.getAttribute("lastVisit");
         LocalDate today = LocalDate.now();
@@ -78,6 +81,7 @@ public class MainController {
         ModelAndView model = new ModelAndView();
         model.setViewName("details.html");
         model.addObject("details",mainService.getDetailsContent(idx,gate));
+        model.addObject("headerList",mainService.getHeaderList());
 
         return model;
     }

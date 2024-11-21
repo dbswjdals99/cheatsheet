@@ -20,6 +20,10 @@ public class MainServiceImpl implements MainService {
         return mapper.getMainList(category, order);
     }
 
+    public ArrayList<MainVO> getHeaderList(){
+        return mapper.getHeaderList();
+    }
+
     @Override
     public CheatSheetVO getDetailsContent(String idx, String gate) {
         return mapper.getDetailsContent(idx, gate);

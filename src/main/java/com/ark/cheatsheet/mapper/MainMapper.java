@@ -10,6 +10,8 @@ public interface MainMapper {
 
     public ArrayList<MainVO> getMainList(@Param("category") int category, @Param("order") String order);
 
+    public ArrayList<MainVO> getHeaderList();
+
     public CheatSheetVO getDetailsContent(String idx, String gate);
 
 }

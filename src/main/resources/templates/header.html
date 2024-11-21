@@ -23,8 +23,8 @@
                             <!-- 군단장 레이드 -->
                             <li th:classappend="${#strings.toString(param.category)} == '1' ? 'active'"><a th:href="@{main(order = ${param.order}, category = 1)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">군단장 레이드 <img src="/static/img/main/down.png" style="width:10px; height: 10px;"></a>
                                 <ul class="dropdown">
-                                    <th:block th:each="product : ${list}" th:if="${product.category} == 1">
-                                        <li><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a></li>
+                                    <th:block th:each="product : ${headerList}">
+                                        <li th:if="${product.category} == 1"><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a></li>
                                     </th:block>
                                 </ul>
                             </li>
@@ -32,8 +32,8 @@
                             <!-- 어비스 던전 -->
                             <li th:classappend="${#strings.toString(param.category)} == '2' ? 'active'"><a th:href="@{main(order = ${param.order}, category = 2)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">어비스 던전 <img src="/static/img/main/down.png" style="width:10px; height: 10px;"></a>
                                 <ul class="dropdown">
-                                    <th:block th:each="product : ${list}" th:if="${product.category} == 2">
-                                        <li><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a></li>
+                                    <th:block th:each="product : ${headerList}">
+                                        <li th:if="${product.category} == 2"><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a></li>
                                     </th:block>
                                 </ul>
                             </li>
@@ -41,8 +41,8 @@
                             <!-- 카제로스 레이드 -->
                             <li th:classappend="${#strings.toString(param.category)} == '3' ? 'active'"><a th:href="@{main(order = ${param.order}, category = 3)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">카제로스 레이드 <img src="/static/img/main/down.png" style="width:10px; height: 10px;"></a>
                                 <ul class="dropdown">
-                                    <th:block th:each="product : ${list}" th:if="${product.category} == 3">
-                                        <li><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a></li>
+                                    <th:block th:each="product : ${headerList}">
+                                        <li th:if="${product.category} == 3"><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a></li>
                                     </th:block>
                                 </ul>
                             </li>
@@ -50,8 +50,8 @@
                             <!-- 에픽 레이드 -->
                             <li th:classappend="${#strings.toString(param.category)} == '4' ? 'active'"><a th:href="@{main(order = ${param.order}, category = 4)}"><img src="/static/img/main/categories.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px">에픽 레이드 <img src="/static/img/main/down.png" style="width:10px; height: 10px;"></a>
                                 <ul class="dropdown">
-                                    <th:block th:each="product : ${list}" th:if="${product.category} == 4">
-                                        <li><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a></li>
+                                    <th:block th:each="product : ${headerList}">
+                                        <li th:if="${product.category} == 4"><a th:href="@{details(order = ${param.order}, gateway = ${product.gateway}, idx = ${product.idx}, category = ${product.category})}" th:text="${product.title}"></a></li>
                                     </th:block>
                                 </ul>
                             </li>

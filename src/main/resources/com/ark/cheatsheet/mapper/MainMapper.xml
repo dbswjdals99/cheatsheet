@@ -21,6 +21,12 @@
             </choose>
     </select>
 
+    <select id="getHeaderList" parameterType="String" resultType="com.ark.cheatsheet.vo.main.MainVO">
+        select * from cheatsheet.main
+    </select>
+
+
+
     <select id="getDetailsContent" resultType="com.ark.cheatsheet.vo.main.CheatSheetVO">
         select * from cheatsheet.cheatsheet where main_no = #{idx} and gate = #{gate} and delete_it = 0;
     </select>
