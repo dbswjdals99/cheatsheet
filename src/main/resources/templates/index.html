@@ -12,6 +12,7 @@
     <title>LostArk CheatSheet</title>
 
     <!-- Google Font -->
+    <link rel="stylesheet" href="https://webfontworld.github.io/knps/KNPSKkomi.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -42,7 +43,7 @@
     <section class="product spad">
         <div class="container">
 
-            <div style="margin-bottom: 40px;">
+            <div style="margin-bottom: 40px; margin-top : 35px;">
                 <a th:href="@{main(order = DESC, category = ${param.category})}" th:classappend="${#strings.toString(param.order)} == 'DESC' ? 'active'" class="btn btn-dark" >최신순</a>
                 <a th:href="@{main(order = ASC, category = ${param.category})}" th:classappend="${#strings.toString(param.order)} == 'ASC' ? 'active'" class="btn btn-dark">기본순</a>
                 <a th:href="@{main(order = VIEW, category = ${param.category})}" th:classappend="${#strings.toString(param.order)} == 'VIEW' ? 'active'" class="btn btn-dark">조회순</a>
@@ -59,7 +60,7 @@
             <!-- Search model end -->
 
             <div class="row">
-                <div class="col-lg-8" style="flex:0 0 100%; max-width: 100%;">
+                <div class="col-lg-8" style="flex:0 0 100%; max-width: 100%; font-family : 'KNPSKkomi';">
                     <div class="trending__product">
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8">

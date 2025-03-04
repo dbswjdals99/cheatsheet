@@ -30,11 +30,18 @@
 
 /* Template default CSS
 /*----------------------------------------*/
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 html,
 body {
 	height: 100%;
-	font-family: "Mulish", sans-serif;
+	font-family: 'ChosunGu';
 	-webkit-font-smoothing: antialiased;
 	background: #0b0c2a;
 }
@@ -48,7 +55,7 @@ h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 400;
-	font-family: "Mulish", sans-serif;
+	font-family: 'ChosunGu';
 }
 
 h1 {
@@ -77,7 +84,7 @@ h6 {
 
 p {
 	font-size: 15px;
-	font-family: "Mulish", sans-serif;
+	font-family: 'ChosunGu';
 	color: #3d3d3d;
 	font-weight: 400;
 	line-height: 25px;
@@ -126,7 +133,7 @@ ol {
 	text-transform: uppercase;
 	padding-left: 20px;
 	position: relative;
-	font-family: "Oswald", sans-serif;
+	font-family: 'ChosunGu';
 }
 
 .section-title h4:after,
@@ -309,7 +316,7 @@ ol {
 }
 
 .btn-gate {
-	margin-top: 20px;
+	margin-top: 140px;
 	margin-bottom: 20px;
 	text-align: center;
 }
@@ -351,10 +358,12 @@ ol {
 
 .header {
 	background: #070720;
+	position : fixed;
+	z-index : 99;
 }
 
 .header__logo {
-	width:200px;
+	width:150px;
 	height:100px;
 	margin-left: 50px;
 	padding-top: 10px;
@@ -367,6 +376,11 @@ ol {
 
 .header__menu {
 	text-align: center;
+	width : 2000px;
+}
+
+.header__menu ul {
+	float : left;
 }
 
 .header__menu ul li {
@@ -374,6 +388,7 @@ ol {
 	display: inline-block;
 	position: relative;
 	margin-right: 16px;
+
 }
 
 .header__menu ul li.active a {
@@ -499,7 +514,7 @@ ol {
 .hero__text h2 {
 	color: #ffffff;
 	font-size: 42px;
-	font-family: "Oswald", sans-serif;
+	font-family: 'ChosunGu';
 	font-weight: 700;
 	line-height: 52px;
 	margin-top: 35px;
@@ -681,7 +696,7 @@ ol {
 .product__item__pic {
 	height: 325px;
 	position: relative;
-	border-radius: 5px;
+	border-radius: 15px;
 }
 
 .product__item__pic .ep {
@@ -748,7 +763,7 @@ ol {
 .product__sidebar .section-title h5 {
 	color: #ffffff;
 	font-weight: 600;
-	font-family: "Oswald", sans-serif;
+	font-family: 'ChosunGu';
 	line-height: 21px;
 	text-transform: uppercase;
 	padding-left: 20px;
@@ -1370,7 +1385,7 @@ ol {
 .normal__breadcrumb__text h2 {
 	color: #ffffff;
 	font-size: 48px;
-	font-family: "Oswald", sans-serif;
+	font-family: 'ChosunGu';
 	font-weight: 700;
 	margin-bottom: 22px;
 }
@@ -2427,6 +2442,8 @@ ol {
 
 .details-popup{
 	cursor:pointer;
+	width:800px;
+	border-radius : 15px;
 }
 
 .cal-input{
@@ -2446,7 +2463,7 @@ ol {
 
 .cal-input-div{
 	margin: auto;
-	width: 28%;
+	width: 30%;
 	border: 1px solid white;
 	border-radius: 5px;
 }

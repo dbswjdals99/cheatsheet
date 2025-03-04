@@ -45,7 +45,6 @@ c
     </div>
 
     <div class="source-box">
-        <span class="source-link" th:text="'출처 : '+${details.source}" style="color:white;"></span><br><br>
         <h5 class="source-content">이미지를 클릭하시면 더 크게 보실수 있습니다. </h5>
     </div>
 
@@ -55,10 +54,14 @@ c
             <div class="container">
                 <div style="text-align: center;">
                     <a>
-                        <img class="details-popup" th:src="${details.img}" style="width:800px;">
+                        <img class="details-popup" th:src="${details.img}">
                     </a>
                 </div>
             </div>
+
+        <div style="margin-top:20px;">
+            <span class="source-link" th:text="'출처 : '+${details.source}" style="color:white;"></span>
+        </div>
 
         <video muted autoplay loop controls id="videoElement" style="display: none;">
             <source th:src="${#strings.length(details.img) > 4 ? #strings.substring(details.img, 0, #strings.length(details.img) - 4) : details.img} + '.mp4'" type="video/mp4">

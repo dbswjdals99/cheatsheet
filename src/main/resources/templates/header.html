@@ -5,18 +5,25 @@
 <div class="header">
     <div class="container_header">
         <div class="row">
-            <div class="col-lg-2">
-                <div class="header__logo">
-                    <a th:href="@{main(order=${param.order} ?: 'DESC', category=0)}">
-                        <img src="/static/img/logo.png" alt="">
-                    </a>
-                </div>
-            </div>
+<!--            <div class="col-lg-2">-->
+<!--                <div class="header__logo">-->
+<!--                    <a th:href="@{main(order=${param.order} ?: 'DESC', category=0)}">-->
+<!--                        <img src="/static/img/logo.png" alt="">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="col-lg-8">
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
+                            <li>
+
+                                    <a th:href="@{main(order=${param.order} ?: 'DESC', category=0)}" style="width:120px;">
+                                        <img src="/static/img/logo.png" alt="">
+                                    </a>
+
+                            </li>
                             <!-- 홈버튼 -->
                             <li th:classappend="${#strings.toString(param.category)} == 0 ? 'active'"><a th:href="@{main(order=${param.order} ?: 'DESC', category=0)}"><img src="/static/img/main/home.png" style="width: 15px; height: 15px; margin-bottom: 5px; margin-right: 5px"></i>홈</a></li>
 
@@ -62,13 +69,16 @@
                                     <li><a href="/calculator?category=5">경매 계산기</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <span style="color: white; font-weight: bold; font-size: medium;">Made By.취딧</span>
+<!--                                <div style="display: flex; justify-content: center; align-items: center;">-->
+<!--                                    <span style="color: white; font-weight: bold; font-size: medium;">Made By.취딧</span>-->
+<!--                                </div>-->
+                            </li>
 
                         </ul>
                     </nav>
                 </div>
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center;">
-                <span style="color: white; font-weight: bold; font-size: medium;">Made By.취딧</span>
             </div>
         </div>
         <div id="mobile-menu-wrap"></div>
