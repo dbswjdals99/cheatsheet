@@ -14,4 +14,5 @@ public interface MainMapper {
 
     public CheatSheetVO getDetailsContent(String idx, String gate);
 
+    public ArrayList<CheatSheetVO> getDetailsComment(@Param("idx") String idx);
 }

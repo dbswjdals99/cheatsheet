@@ -11,7 +11,11 @@ public class CheatSheetVO {
 
     private String img;
 
+    private String img_comment;
+
     private String gate;
+
+    private String gateway;
 
     private String source;
 

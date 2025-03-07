@@ -32,17 +32,32 @@
 
         $('#buttonsContainer').empty();
         const urlParams = new URL(location.href).searchParams;
-        const gate = urlParams.get('gateway');
+        const idx = urlParams.get('idx');
         var $buttonsContainer = $('#buttonsContainer');
 
-        for (var num = 1; num <= gate; num++) {
-            $('<button/>', {
-                type: 'button',
-                'class': 'btn btn-dark',
-                text: num + '번',
-                value: num
-            }).appendTo($buttonsContainer);
-        }
+        $.ajax({
+            type : 'get',
+            url : '/detail-api',
+            dataType : 'json',
+            data : {
+                    "idx" : idx
+            }
+        }).done(function (data){
+
+
+
+            for (var num = 0; num <= data.length; num++) {
+
+                console.log(data[num].img_comment)
+
+                $('<button/>', {
+                    type: 'button',
+                    'class': 'btn btn-dark',
+                    text:  data[num].img_comment,
+                    value: num+1
+                }).appendTo($buttonsContainer);
+            }
+        })
 
     });
 

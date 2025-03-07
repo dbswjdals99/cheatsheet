@@ -29,4 +29,9 @@ public class MainServiceImpl implements MainService {
         return mapper.getDetailsContent(idx, gate);
     }
 
+    public  ArrayList<CheatSheetVO> getDetailsComment(String idx){
+        ArrayList<CheatSheetVO> list = mapper.getDetailsComment(idx);
+        return list;
+    }
+
 }
